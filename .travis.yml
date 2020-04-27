@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 14.0.0
+
+jobs:
+  include:
+    - stage: build
+      script: npm build
+    - stage: test
+      script: npm test
+
+stages:
+  - build
+  - test
+
+deploy:
+  provider: pages:git
+  token: $GIT_TOKEN
+  edge: true
+  on:
+    branch: master
