@@ -6,6 +6,8 @@ jobs:
   include:
     - stage: build
       script: npm build
+    - stage: test
+      script: npm test
     - stage: deploy
       script: echo "hello"
       if: branch = master
