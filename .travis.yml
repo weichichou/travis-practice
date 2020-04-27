@@ -18,5 +18,6 @@ deploy:
   skip_cleanup: true
   github_token: $GIT_TOKEN
   keep_history: true
+  local_dir: build
   on:
     branch: master
