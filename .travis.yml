@@ -5,4 +5,12 @@ node_js:
 jobs:
   include:
     - stage: build
-    - script: npm build
+      script: npm build
+    - stage: deploy
+      script: echo "hello"
+      if: branch = master
+
+stages:
+  - build
+  - test
+  - deploy
