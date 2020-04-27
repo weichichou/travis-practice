@@ -14,8 +14,9 @@ stages:
   - test
 
 deploy:
-  provider: pages:git
-  token: $GIT_TOKEN
-  edge: true
+  provider: pages
+  skip_cleanup: true
+  github_token: $GIT_TOKEN
+  keep_history: true
   on:
     branch: master
