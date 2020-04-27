@@ -9,12 +9,11 @@ jobs:
     - stage: test
       script: npm test
 
-
 stages:
   - build
   - test
- 
- deploy:
+
+deploy:
   provider: pages:git
   token: $GIT_TOKEN
   edge: true
