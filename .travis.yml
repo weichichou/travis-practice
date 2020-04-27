@@ -8,11 +8,15 @@ jobs:
       script: npm build
     - stage: test
       script: npm test
-    - stage: deploy
-      script: echo "hello"
-      if: branch = master
+
 
 stages:
   - build
   - test
-  - deploy
+ 
+ deploy:
+  provider: pages:git
+  token: $GIT_TOKEN
+  edge: true
+  on:
+    branch: master
